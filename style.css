@@ -1,0 +1,363 @@
+/* ================= GLOBAL STYLES ================= */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Hind Siliguri', sans-serif; 
+}
+
+body { 
+    background: #f1f5f9; 
+    color: #1e293b; 
+    overflow-x: hidden; 
+}
+
+.pos-container { 
+    display: flex; 
+    width: 100%; 
+    min-height: 100vh; 
+}
+
+/* ================= SIDEBAR (ALWAYS FIXED & VISIBLE) ================= */
+.sidebar {
+    width: 220px;
+    background: #0f172a;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar .logo { 
+    padding: 20px; 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    position: sticky; 
+    top: 0; 
+    background: #0f172a; 
+    z-index: 10; 
+}
+
+.nav-menu { 
+    list-style: none; 
+    padding: 10px 0; 
+}
+
+.nav-menu li { 
+    padding: 12px 15px; 
+    cursor: pointer; 
+    border-left: 4px solid transparent; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    color: #cbd5e1; 
+    font-weight: 500; 
+    font-size: 15px; 
+    transition: 0.2s;
+}
+
+.nav-menu li:hover, .nav-menu li.active { 
+    background: #1e293b; 
+    color: #38bdf8; 
+    border-left-color: #38bdf8; 
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px); 
+    padding: 20px;
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+.header-bar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+/* ================= CARDS & TABLES ================= */
+.card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    margin-bottom: 20px; 
+    min-width: 100%; 
+    overflow-x: auto;
+}
+
+.data-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    min-width: 600px; 
+}
+
+.data-table th, .data-table td { 
+    padding: 12px 15px; 
+    border-bottom: 1px solid #e2e8f0; 
+    text-align: left; 
+}
+
+.data-table th { 
+    background: #f8fafc; 
+    color: #475569; 
+    font-weight: 600; 
+}
+
+/* ================= GRIDS & DASHBOARD ================= */
+.summary-cards { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+.summary-cards .card { 
+    flex: 1; 
+    min-width: 200px; 
+}
+
+.grid-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+.grid-container > div { 
+    flex: 1; 
+    min-width: 300px; 
+}
+
+/* ================= BILLING SECTION SPECIFICS ================= */
+.billing-container { 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.billing-left { 
+    flex: 2; 
+    min-width: 300px; 
+}
+
+.billing-right { 
+    flex: 1; 
+    min-width: 300px; 
+    position: sticky; 
+    top: 15px; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+/* ================= FORMS & BUTTONS ================= */
+input, select, textarea { 
+    width: 100%; 
+    padding: 12px 15px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+    font-size: 15px; 
+    outline: none;
+}
+
+input:focus, select:focus { 
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2); 
+}
+
+.btn { 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px; 
+    font-size: 14px; 
+    transition: 0.2s;
+}
+
+.btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+
+.btn-primary { background: #3b82f6; color: white; }
+.btn-success { background: #10b981; color: white; }
+.btn-danger { background: #ef4444; color: white; }
+.btn-warning { background: #f59e0b; color: white; }
+.btn-outline { background: transparent; border: 2px solid #cbd5e1; color: #475569; }
+.btn-small { padding: 6px 12px; font-size: 12px; }
+
+/* ================= SWITCH TOGGLE (ON/OFF) ================= */
+.switch { position: relative; display: inline-block; width: 46px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbd5e1; transition: .4s; border-radius: 24px; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: #10b981; }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* ================= MODALS & HELPERS ================= */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); display: flex; align-items: center; justify-content: center; z-index: 100000; padding: 15px; backdrop-filter: blur(4px); }
+.modal.hidden { display: none !important; }
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+
+/* ================= SKELETON LOADER (ANTI-FLICKER) ================= */
+#skeleton-loader {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f5f9;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.skel-sidebar {
+    width: 220px;
+    background: #0f172a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.skel-main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.skel-header {
+    height: 60px;
+    background: white;
+    border-radius: 8px;
+    animation: pulse 1.5s infinite;
+}
+.skel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.skel-card {
+    height: 120px;
+    background: white;
+    border-radius: 12px;
+    animation: pulse 1.5s infinite;
+}
+.skel-item {
+    height: 40px;
+    background: #334155;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+/* ================= MOBILE VIEW (APP LIKE DESIGN) ================= */
+@media (max-width: 768px) {
+    /* Bottom Navigation Bar for Mobile */
+    .sidebar { 
+        width: 100%; 
+        height: 65px; 
+        position: fixed; 
+        bottom: 0; 
+        top: auto; 
+        z-index: 10000; 
+        display: flex; 
+        flex-direction: row; 
+        overflow-x: auto; 
+        overflow-y: hidden;
+        white-space: nowrap; 
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2); 
+    }
+    
+    .sidebar .logo { display: none; } /* Hide top logo on mobile */
+    #sidebar-app-branding { display: none; } /* Hide powered by text */
+
+    .nav-menu { 
+        display: flex; 
+        width: 100%; 
+        padding: 0; 
+        margin: 0; 
+        align-items: center;
+    }
+    
+    .nav-menu li { 
+        flex: 1; 
+        min-width: 75px; 
+        justify-content: center; 
+        font-size: 11px; 
+        flex-direction: column; 
+        gap: 4px; 
+        padding: 8px 5px; 
+        text-align: center; 
+        border-left: none; 
+        border-bottom: 3px solid transparent; 
+    }
+    
+    .nav-menu li i { font-size: 20px; margin: 0; }
+    .nav-menu li:hover, .nav-menu li.active { 
+        background: #1e293b; 
+        border-bottom-color: #38bdf8; 
+        border-left-color: transparent; 
+    }
+
+    /* Main Content adjustments for mobile */
+    .main-content { 
+        margin-left: 0; 
+        width: 100%; 
+        padding: 10px; 
+        padding-bottom: 80px; /* Space for bottom nav */
+    }
+    
+    .header-bar h2 { font-size: 18px; }
+    
+    /* Make Billing layout stacked */
+    .billing-left, .billing-right { min-width: 100%; flex: 1 1 100%; }
+    .billing-right { position: static; margin-top: 15px; }
+
+    /* Make grids 1 column */
+    .grid-container > div { min-width: 100%; }
+    .summary-cards .card { min-width: 100%; margin-bottom: 10px; }
+
+    /* Skeleton layout for mobile */
+    .skel-sidebar { 
+        width: 100%; 
+        height: 65px; 
+        position: fixed; 
+        bottom: 0; 
+        top: auto; 
+        flex-direction: row; 
+        justify-content: space-around;
+        padding: 10px;
+    }
+    .skel-sidebar .skel-item { width: 50px; height: 40px; margin: 0; }
+    .skel-sidebar .skel-item:first-child { display: none; } /* Hide logo box on mobile skeleton */
+    .skel-main { margin-left: 0; width: 100%; padding-bottom: 80px; }
+}
+
+@media print {
+    body > *:not(#print-area) { display: none !important; }
+    #print-area { display: block !important; position: relative; width: 100%; margin: 0; padding: 10px; background: white !important; }
+    #print-area * { visibility: visible !important; color: black !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white !important; margin: 0; padding: 0; }
+    @page { margin: 0; }
+}
